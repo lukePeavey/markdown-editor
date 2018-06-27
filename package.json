@@ -16,12 +16,22 @@
     "semantic-ui-react": "^0.81.2"
   },
   "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.6",
     "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,css,json}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
