@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import exampleDoc from './example.md'
 /**
  * A root component that serves as the store for the app.
  * The state and actions are passed to the child component
@@ -19,6 +19,13 @@ export default class AppStore extends React.Component {
     changeEditorContent: (newValue) => {
       this.setState({ editorContent: newValue })
     },
+  }
+
+  async componentDidMount() {
+    const response = await fetch(exampleDoc)
+    if (this.state.editorContent === '') {
+      this.setState({ editorContent: await response.text() })
+    }
   }
 
   render() {
