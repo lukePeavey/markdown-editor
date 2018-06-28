@@ -4,6 +4,12 @@ import marked from 'marked'
 import * as prism from 'prismjs' // imports all prism language modules
 import './Preview.css'
 
+const renderer = new marked.Renderer()
+// #Test 9 -  Add a custom renderer for `<a>` tags, and dynamically add the `target="_blank"
+renderer.link = function(href, title, text) {
+  return `<a target="_blank" href="${href}" title="${title}">${text}</a>`
+}
+
 // Use Prism for syntax highlighting of code blocks in rendered markdown.
 const highlight = (code, lang) => {
   const language = prism.languages[lang] || prism.languages['js']
@@ -17,7 +23,9 @@ marked.setOptions({
   sanitize: false,
   smartLists: true,
   smartypants: false,
+  breaks: true,
   highlight,
+  renderer,
 })
 
 /**
