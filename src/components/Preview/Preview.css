@@ -1,0 +1,37 @@
+.Preview {
+  flex: 1 0 50%;
+  padding: 16px;
+  order: 2;
+}
+
+.Preview-document {
+  max-width: 978px;
+  height: calc(100vh - 72px);
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.Preview-heading {
+  display: flex;
+  align-items: center;
+  padding: 9px 10px 10px;
+  margin: 0;
+  background: #f6f8fa;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-bottom: 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.Preview-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+}
+
+.Preview-body {
+  padding: 24px;
+}
