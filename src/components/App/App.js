@@ -1,11 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Preview from '../Preview'
+import Editor from '../Editor'
+import './App.css'
 
 /**
  * The top-level presentational component.
  */
 export default function App({ state, actions }) {
-  return <div>App stub</div>
+  return (
+    <div className="App">
+      <div className="App-layout split">
+        <Preview markdown={state.editorContent} {...actions} />
+        <Editor value={state.editorContent} {...actions} />
+      </div>
+    </div>
+  )
 }
 
 App.propTypes = {
