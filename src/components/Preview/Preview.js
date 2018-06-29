@@ -42,7 +42,7 @@ export default function Preview({ markdown }) {
       <article className="Preview-document">
         <div
           id="preview"
-          className="Preview-body markdown"
+          className="Preview-body markdown-body"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </article>
