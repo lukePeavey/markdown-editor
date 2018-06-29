@@ -5,7 +5,7 @@ import * as prism from 'prismjs' // imports all prism language modules
 import './Preview.css'
 
 const renderer = new marked.Renderer()
-// #Test 9 -  Add a custom renderer for `<a>` tags, and dynamically add the `target="_blank"
+// Test #7 -  Add a custom renderer for `<a>` tags that adds target="_blank"
 renderer.link = function(href, title, text) {
   return `<a target="_blank" href="${href}" title="${title}">${text}</a>`
 }
@@ -23,7 +23,7 @@ marked.setOptions({
   sanitize: false,
   smartLists: true,
   smartypants: false,
-  breaks: true,
+  breaks: true, // tests #8
   highlight,
   renderer,
 })

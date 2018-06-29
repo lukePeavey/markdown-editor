@@ -7,12 +7,15 @@ import './App.css'
 /**
  * The top-level presentational component.
  */
-export default function App({ state, actions }) {
+export default function App({ state, changeEditorContent }) {
   return (
     <div className="App">
       <div className="App-layout split">
-        <Preview markdown={state.editorContent} {...actions} />
-        <Editor value={state.editorContent} {...actions} />
+        <Preview markdown={state.editorContent} />
+        <Editor
+          value={state.editorContent}
+          changeEditorContent={changeEditorContent}
+        />
       </div>
     </div>
   )
@@ -24,8 +27,5 @@ App.propTypes = {
     editorContent: PropTypes.string.isRequired,
   }),
   /** actions are functions that update state are run side effects */
-  actions: {
-    /** A function to update the editorContent state  */
-    changeEditorContent: PropTypes.func.isRequired,
-  },
+  changeEditorContent: PropTypes.func.isRequired,
 }

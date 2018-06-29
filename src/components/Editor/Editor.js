@@ -23,7 +23,7 @@ export default class Editor extends React.Component {
 
 Editor.propTypes = {
   /** The current content of the editor */
-  editorContent: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   /** Function to change the input value stored in state */
   changeEditorContent: PropTypes.func.isRequired,
 }

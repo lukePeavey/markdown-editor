@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import exampleDoc from './example.md'
+import App from './components/App'
+
 /**
  * A root component that serves as the store for the app.
  * The state and actions are passed to the child component
@@ -13,12 +15,9 @@ export default class AppStore extends React.Component {
     editorContent: '',
   }
 
-  // functions to update the state.
-  actions = {
-    /** Changes the value of the text area (editorContent) stored in state */
-    changeEditorContent: (newValue) => {
-      this.setState({ editorContent: newValue })
-    },
+  /** Changes the value of the text area (editorContent) stored in state */
+  changeEditorContent = (newValue) => {
+    this.setState({ editorContent: newValue })
   }
 
   async componentDidMount() {
@@ -29,8 +28,8 @@ export default class AppStore extends React.Component {
   }
 
   render() {
-    const { state, actions } = this
-    return this.props.children({ state, actions })
+    const { state, changeEditorContent } = this
+    return this.props.children({ state, changeEditorContent })
   }
 }
 
