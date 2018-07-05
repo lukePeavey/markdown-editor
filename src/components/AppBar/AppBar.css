@@ -1,0 +1,19 @@
+.AppBar {
+  border-radius: 0 !important;
+}
+.AppBar.inverted {
+  background: rgb(5, 5, 5) !important;
+}
+
+.AppBar-titleInput {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.AppBar-titleInput::before {
+  display: none;
+}
+
+.AppBar-title {
+  padding: 0 1em;
+}
