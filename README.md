@@ -1,4 +1,4 @@
-<img src="src/logo.svg" alt="logo"  width="80" align="right" />
+<img src="markdown-logo.svg" alt="logo"  width="80" align="right" />
 
 # Markdown Editor
 
@@ -9,9 +9,9 @@ _A github style markdown editor that shows a live preview of the rendered docume
 
 ### Branches
 
-[**fcc-project**](https://github.com/lukePeavey/markdown-editor/tree/fcc-project) - completed fcc project
+[**fcc-project**](https://github.com/lukePeavey/markdown-editor/tree/fcc-project) - Basic FCC project
 
-[**master**](https://github.com/lukePeavey/markdown-editor/tree/master) - a slightly more complex version with some additional features
+[**master**](https://github.com/lukePeavey/markdown-editor/tree/master) - A slightly more complex version with some additional features
 
 ### Libraries used
 
@@ -28,3 +28,8 @@ _A github style markdown editor that shows a live preview of the rendered docume
 - Switch between layouts: editor | preview | split screen
 - Open a markdown file from local disk to edit
 - Save content as markdown file
+
+### [Live Demo (with FCC test suite)](https://fcc-markdown-editor.surge.sh/)
+[![screenshots](screenshots/screenshot.jpg)](https://fcc-markdown-editor.surge.sh/)
+
+
