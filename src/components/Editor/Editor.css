@@ -1,27 +1,17 @@
 .Editor {
-  position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1 0 50%;
+  flex: 1 0 100%;
+  max-width: 1200px;
+  height: calc(100vh - 72px);
+  margin: 0 auto;
+  padding: 16px 0 16px 0;
   order: 1;
-  padding: 16px;
+  position: relative;
+  background: #1e1e1e;
 }
 
 .Editor.split {
-  width: 50%;
-}
-
-.Editor textarea {
-  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
-    monospace;
-  white-space: pre-wrap;
-  background: #f1f1f1;
-  color: #111;
-  flex: 1 0 100%;
-  width: 100%;
-  min-height: 500px;
-  padding: 20px;
-  font-size: 14px;
-  line-height: 1.5;
-  border: none;
+  flex: 1 0 50%;
+  max-width: 50%;
 }
