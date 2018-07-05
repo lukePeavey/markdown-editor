@@ -1,8 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import marked from 'marked'
 import * as prism from 'prismjs' // imports all prism language modules
 import './Preview.css'
+
+// Marked render instance
+const renderer = new marked.Renderer()
+
+// Test #7 -  Add a custom renderer for `<a>` tags that adds target="_blank"
+renderer.link = function(href, title, text, style) {
+  return `<a target="_blank" href="${href}" title="${title}" style=${style ||
+    ''}>${text}</a>`
+}
 
 // Use Prism for syntax highlighting of code blocks in rendered markdown.
 const highlight = (code, lang) => {
@@ -17,24 +27,26 @@ marked.setOptions({
   sanitize: false,
   smartLists: true,
   smartypants: false,
+  breaks: true, //  Required for FCC test #8
   highlight,
+  renderer
 })
 
 /**
  * The preview panel shows a live preview of the rendered markdown document
  */
-export default function Preview({ markdown }) {
-  const content = marked(markdown)
+export default function Preview({ editorContent, activeView, documentTitle }) {
+  const content = marked(editorContent)
   return (
-    <section className="Preview split">
-      <header className="Preview-heading">
-        <img src="icons/book.svg" className="icon" />
-        <h3 className="Preview-title">Document Preview</h3>
-      </header>
+    <section className={classNames('Preview', activeView)}>
       <article className="Preview-document">
+        <header className="Preview-heading">
+          <img src="icons/book.svg" alt="book" className="icon" aria-hidden />
+          <h3 className="Preview-title">{documentTitle}</h3>
+        </header>
         <div
           id="preview"
-          className="Preview-body markdown"
+          className="Preview-body markdown-body"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </article>
@@ -44,5 +56,7 @@ export default function Preview({ markdown }) {
 
 Preview.propTypes = {
   /** The markdown content to render */
-  markdown: PropTypes.string.isRequired,
+  editorContent: PropTypes.string.isRequired,
+  /** The current view (app layout) */
+  activeView: PropTypes.oneOf(['editor', 'preview', 'split']).isRequired
 }
