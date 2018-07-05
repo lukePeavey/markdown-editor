@@ -1,5 +1,7 @@
 .AppBar {
   border-radius: 0 !important;
+  padding-left: 30px; /* for fcc test suite ui */
+  padding-right: 50px; /* space for github corner */
 }
 .AppBar.inverted {
   background: rgb(5, 5, 5) !important;

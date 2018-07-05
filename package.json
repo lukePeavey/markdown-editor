@@ -16,6 +16,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-dropzone": "^4.2.12",
+    "react-github-corner": "^2.3.0",
     "react-monaco-editor": "^0.17.2",
     "react-transition-group": "^2.4.0",
     "semantic-ui-css": "^2.3.2",

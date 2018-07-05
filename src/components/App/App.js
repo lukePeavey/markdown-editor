@@ -5,6 +5,7 @@ import Preview from '../Preview'
 import Editor from '../Editor'
 import AppBar from '../AppBar'
 import FileUploader from '../FileUploader'
+import GithubCorner from 'react-github-corner'
 import './App.css'
 
 /**
@@ -20,7 +21,11 @@ export default function App({ state, actions }) {
         {activeView !== 'preview' && <Editor {...state} actions={actions} />}
       </div>
     </div>,
-    <FileUploader key="modal" open={isFileUploaderOpen} actions={actions} />
+    <FileUploader key="modal" open={isFileUploaderOpen} actions={actions} />,
+    <GithubCorner
+      href="https://github.com/lukePeavey/markdown-editor"
+      bannerColor="#3b959d"
+    />
   ]
 }
 
