@@ -1,0 +1,64 @@
+.FileUploader {
+  overflow: hidden;
+}
+
+.FileUploader-content {
+  display: flex;
+  flex-direction: column;
+  height: 50vmax;
+  max-height: 350px;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.FileUploader-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: dashed 2px rgb(62, 152, 199);
+  margin: 3px;
+  width: calc(100% - 6px);
+  flex: 1 1 0;
+}
+
+.FileUploader-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: solid 2px rgb(62, 152, 199);
+  color: rgb(62, 152, 199);
+  border-radius: 100%;
+}
+
+.FileUploader-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: all 300ms ease-out;
+}
+
+.FileUploader-message .message {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.FileUploader-message .button {
+  margin-left: auto !important;
+}
+
+.FileUploader-message-enter {
+  opacity: 0.5;
+  height: 0;
+}
+
+.FileUploader-message-enter-active,
+.FileUploader-message-enter-done {
+  opacity: 1;
+  height: 62px;
+}
